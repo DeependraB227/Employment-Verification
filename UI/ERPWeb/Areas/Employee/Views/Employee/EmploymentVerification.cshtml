@@ -1,0 +1,65 @@
+﻿@using ERPUI.Helpers;
+@{
+    Layout = null;
+}
+
+<script src="~/Scripts/jquery.min.js"></script>
+<link href="~/css/fontawesome/font-awesome.min.css" rel="stylesheet" />
+<script src="~/Scripts/jQuerygrid/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/jQuerygrid/jquery-ui-1.10.4.min.js"></script>
+<script src="~/Scripts/jQuerygrid/grid.locale-en.js"></script>
+<script src="@StaticFile.Version("~/Scripts/jQuerygrid/ui.multiselect.js")"></script>
+<script src="@StaticFile.Version("~/Scripts/jQuerygrid/jquery.jqGrid.min.js")"></script>
+<script src="@StaticFile.Version("~/Scripts/Common/JQGridSettings.js")"></script>
+<script src="@StaticFile.Version("~/Scripts/Employee/EmploymentVerification.js")"></script>
+<style type="text/css">
+    .jgrid-custom #gbox_myAuditeeDashboard, #gbox_AuditorDashboard, #gbox_myGridSuggestionGiver {
+        height: auto !important;
+    }
+</style>
+
+<div class="data-box" style="overflow:hidden">
+    <!--Data and Search Switcher-->
+    <div class="switcher-box pull-right">
+        <div class="switch-search active"><div class="switch-search-icon"><span>SEARCH</span></div></div>
+        <div class="switch-data"><div class="switch-data-icon"><span>DATA</span></div></div>
+    </div>
+    <div class="clearfix"></div>
+    <!--Data Search Start-->
+    <div class="data-search create-data" id="divsearch">
+        <div class="col-md-3">
+            <label>Employee ID</label>
+            <input type="text" name="EmployeeID" id="intEmployeeID" autocomplete="off" />
+            @*<input type="hidden" name="hfEmployeeId" id="hfEmployeeId" />*@
+        </div>
+        <div class="col-md-3">
+            <label>Company Name</label>
+            <input type="text" name="CompanyName" id="txtCompanyName" autocomplete="off" />
+            @*<input type="hidden" name="hfCompanyName" id="hfCompanyName" />*@
+        </div>
+        <div class="col-md-3">
+            <label>Verification Code</label>
+            <input type="text" name="VerificationCode" id="txtVerificationCode" autocomplete="off" />
+            @*<input type="hidden" name="hfVerificationCode" id="hfVerificationCode" />*@
+        </div>
+        <!--Data Search Buttons-->
+        <div class="button-box">
+            <input type="button" class="search-icon" id="btnSearch" value="SEARCH" onclick="GetSearch()" />
+            <input type="button" class="reset-icon" id="btnReset" value="RESET" />
+        </div>
+    </div>
+
+    <!--Grid Start-->
+    <div class="clearfix"></div>
+    <!--Grid Start-->
+
+    <div class="create-data" id="createDiv" style="display: none; ">
+        <div>
+            <label>Result: </label>
+            <input type="text" name="Result" id="txtResult" />
+        </div>
+    </div>
+
+    <!--Hidden Field Check For Control Permission -->
+
+</div>
